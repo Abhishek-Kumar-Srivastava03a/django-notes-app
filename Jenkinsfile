@@ -33,7 +33,7 @@ pipeline {
         }
         stage("deploy"){
             steps{
-                sh "docker compose down"
+                sh "docker compose -f docker-compose.yml down"
                 script{
                     deploy("docker-compose.yml")
                 }
